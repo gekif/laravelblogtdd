@@ -21,3 +21,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // Make Route for Blog
 Route::get('/blog', 'PostsController@index')->name('blog');
+
+// Make route for single post
+Route::get('/blog/{post}', 'PostsController@show');
