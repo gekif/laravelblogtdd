@@ -21,10 +21,34 @@ class PostTest extends TestCase
 
     public function testAGuestCanAccessBlogIndex()
     {
-        // make GET access to blog route
+        // Test Number 1
+        /*// make GET access to blog route
         $response = $this->get('blog');
 
         // assert HTTP status return is 200
-        $response->assertStatus(200);
+        $response->assertStatus(200);*/
+
+
+        // Test Number 2
+        // Giving Post Object
+
+        // Create Post Data
+        $post = factory('App\Post')->create();
+
+        // When guest access blog url
+        // Visit blog homepage
+        $response = $this->get('/blog');
+
+        // Then i've see blog title that create before
+        // Expect to see post
+        $response->assertSee($post->title);
+    }
+
+
+    public function aGuestCanSeeSinglePost()
+    {
+        // Giving Post Data
+        // When guest access blog/{id}
+        // Expect to see post title
     }
 }
