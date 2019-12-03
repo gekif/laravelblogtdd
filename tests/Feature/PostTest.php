@@ -45,10 +45,15 @@ class PostTest extends TestCase
     }
 
 
-    public function aGuestCanSeeSinglePost()
+    public function testAGuestCanSeeSinglePost()
     {
         // Giving Post Data
+        $post = factory('App\Post')->create();
+
         // When guest access blog/{id}
+        $response = $this->get('/blog/' . $post->id);
+
         // Expect to see post title
+        $response->assertSee($post->title);
     }
 }
