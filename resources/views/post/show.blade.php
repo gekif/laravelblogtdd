@@ -11,23 +11,20 @@
                     <div class="card">
 
                         <div class="panel-heading">
-                            <h1>My Blog</h1>
+                            <h1>{{ $post->title }}</h1>
                         </div>
 
                         <div class="panel-body">
-                            @foreach($posts as $post)
-                                <article>
-                                    <h3><a href="/blog/{{ $post->id }}">{{ $post->title }}</a></h3>
-                                    <div class="body">{{ $post->body }}</div>
-                                </article>
-                            @endforeach
+                            <article>
+                                <div class="body">{{ $post->body }}</div>
+                            </article>
                         </div>
 
                     </div>
 
                 </div>
 
-
+            </div>
 
         </div>
 
