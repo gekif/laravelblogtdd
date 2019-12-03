@@ -17,4 +17,10 @@ class PostsController extends Controller
         return view('post.index')->with(['posts' => $posts]);
     }
 
+
+    public function show(Post $post)
+    {
+        return view('post.show')->with(['posts' => $post]);
+    }
+
 }
