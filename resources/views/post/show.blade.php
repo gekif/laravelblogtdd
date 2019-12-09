@@ -31,6 +31,7 @@
                 <div class="card">
                     @foreach ($post->comment as $comment)
                         <div class="panel-heading"><h3>Comment</h3></div>
+                        <div class="panel-heading">Updated At: <b>{{ $comment->created_at->diffForHumans() }}</b></div>
                         <div class="panel-body">
                             <article>
                                 <div class="body">{{ $comment->body }}</div>
