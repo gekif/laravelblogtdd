@@ -56,4 +56,22 @@ class PostTest extends TestCase
         // Expect to see post title
         $response->assertSee($post->title);
     }
+
+    public function testGuestCanSeeCommentWhenVisitSinglePost()
+    {
+        // Given a Post
+        $post = factory('App\Post')->create();
+
+        // and Post a Comment
+        $comment = factory('App\Comment')->create([
+            'post_id' => $post->id
+        ]);
+
+        // then I Visit single post page
+        $response = $this->get('blog/' . $post->id);
+
+        // I've see a comment
+        $response->assertSee($comment->body);
+    }
+
 }

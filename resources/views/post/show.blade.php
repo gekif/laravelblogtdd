@@ -28,6 +28,22 @@
 
         </div>
 
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            @foreach ($post->comment as $comment)
+                <div class="panel panel-default">
+                    <div class="panel-heading"></div>
+                    <div class="panel-body">
+                        <article>
+                            <div class="body">{{ $comment->body }}</div>
+                        </article>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+
+
     </div>
 
 
